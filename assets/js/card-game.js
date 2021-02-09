@@ -29,6 +29,9 @@ const cardTwoBtn = document.querySelector('#card-two-btn');
 // Define Reset button
 const resetBtn = document.querySelector('#reset-btn');
 
+// Define count of cards left
+const cardsLeftCount = document.querySelector('#cards-left');
+
 // Removes specific value from an array
 const removeCard = (arr, value) => { 
     return arr.filter( (e) => { 
@@ -56,12 +59,14 @@ const newCardsOne = () => {
         pickedCard = cardTwo.innerHTML;
         cardOneBtn.setAttribute('disabled', true);
         cardTwoBtn.setAttribute('disabled', true);
-        return msg.innerHTML = `your picked card is ${pickedCard}`;
+        cardsLeftCount.innerHTML = 1;
+        return msg.innerHTML = `your card is: ${pickedCard}`;
     } else {
         pickedCard = keepCards[0];
         cardOneBtn.setAttribute('disabled', true);
         cardTwoBtn.setAttribute('disabled', true);
-        return msg.innerHTML = `your picked card is ${pickedCard}`;
+        cardsLeftCount.innerHTML = 1;
+        return msg.innerHTML = `your card is: ${pickedCard}`;
     }
 }
 
@@ -75,12 +80,14 @@ const newCardsTwo = () => {
         pickedCard = cardOne.innerHTML;
         cardOneBtn.setAttribute('disabled', true);
         cardTwoBtn.setAttribute('disabled', true);
-        return msg.innerHTML = `your picked card is ${pickedCard}`;
+        cardsLeftCount.innerHTML = 1;
+        return msg.innerHTML = `your card is: ${pickedCard}`;
     } else {
         pickedCard = keepCards[0];
         cardOneBtn.setAttribute('disabled', true);
         cardTwoBtn.setAttribute('disabled', true);
-        return msg.innerHTML = `your picked card is ${pickedCard}`;
+        cardsLeftCount.innerHTML = 1;
+        return msg.innerHTML = `your card is: ${pickedCard}`;
     }
 }
 
@@ -98,6 +105,8 @@ const randomCards = () => {
     cardTwo.innerHTML = cardTwoContent;
     usedCards = removeCard(usedCards, cardTwoContent);
     keepCards.push(cardTwoContent);
+
+    cardsLeftCount.innerHTML = usedCards.length + keepCards.length;
 }
 
 // Same but for only card 1
