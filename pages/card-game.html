@@ -3,21 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/main.css">
     <title>Card Game</title>
 </head>
 <body>
-    <a href="./../index.html">main page</a>
+    <a href="./../index.html">< main page</a>
+    <hr>
     <h1>Card Game</h1>
+    <hr>
     <h2 id="msg">Discard the card you don't want to keep</h2>
-    <div>
-        <div id="card-one">1</div>
-        <button id="card-one-btn">Discard</button>
+    <div class="cards">
+        <div class="card-container">
+            <div id="card-one">1</div>
+            <button id="card-one-btn">Discard</button>
+        </div>
+        <div class="card-container">
+            <div id="card-two">2</div>
+            <button id="card-two-btn">Discard</button>
+        </div>
     </div>
-    <div>
-        <div id="card-two">2</div>
-        <button id="card-two-btn">Discard</button>
-    </div>
-    <div>
+    <div class="reset-container">
         <button id="reset-btn">Reset</button>
     </div>
     <script src="./../assets/js/card-game.js"></script>

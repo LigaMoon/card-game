@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
+
+body {
+    font-family:  'Montserrat', sans-serif;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 4rem;
+}
+
+.cards {
+    display: inline-flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.card-container {
+    width: 45%;
+    display: inline-block;
+    text-align: center;
+}
+
+.card-container button, #reset-btn {
+    margin: 2rem 1rem;
+    font: 400 1rem 'Montserrat';
+    background-color: #fff;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.card-container div {
+    padding: 1rem;
+    border: 1px solid gray;
+}
+
+.reset-container {
+    text-align: center;
+}
+
+.card-container button {
+    border: 1px solid #00798c;
+    color: #00798c;
+}
+
+.card-container button:hover {
+    background-color: #00798c;
+    color: #fff;
+}
+
+.card-container button[disabled] {
+    border: 1px solid #9db4c0;
+    color: #9db4c0;
+    cursor: not-allowed;
+}
+
+.card-container button[disabled]:hover {
+    border: 1px solid #9db4c0;
+    color: #9db4c0;
+    background-color: #fff;
+}
+
+#reset-btn {
+    border: 1px solid #d1495b;
+    color: #d1495b;
+}
+
+#reset-btn:hover {
+    background-color: #d1495b;
+    color: #fff;
+}
+
+#reset-btn:focus, .card-container button:focus {
+    outline: none;
+}
+

@@ -43,6 +43,7 @@ const resetCards = () => {
     discardCards = [];
     cardOneBtn.removeAttribute('disabled');
     cardTwoBtn.removeAttribute('disabled');
+    msg.innerHTML = `Discard the card you don't want to keep`;
 }
 
 const newCardsOne = () => {
