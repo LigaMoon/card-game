@@ -1,16 +1,45 @@
 // Data used for cards
 const data = [
-    '1',
-    '2',
-    '3',
-    '4',
-    '5',
-    '6',
-    '7',
-    '8',
-    '9',
-    '10'
+    'Achievement - Accomplishment/Reaching goals',
+    'Advancement - Promotion/Progress',
+    'Adventure - Exploration/Seeking new experiences',
+    'Affection - Love/Caring',
+    'Competitiveness - Striving to win/Being the best',
+    'Contribution - Service/Assisting others',
+    'Creativity - Originality/Imagination',
+    'Credibility - Believability/Authenticity',
+    'Economic - security	Steady income/Adequate money',
+    'Enjoyment - Excitement/Fun',
+    'Fairness - Justice/Equality',
+    'Fame - Renown/Distinction',
+    'Family - Close relationship with family members',
+    'Freedom - Independence/Autonomy',
+    'Friendship - Companionship/Rapport',
+    'Health - Physical/mental well-being',
+    'Honour - Respect/Reverence',
+    'Humility - Humbleness/Modesty',
+    'Inner harmony - Balance/Tranquillity',
+    'Integrity - Honesty/Sincerity',
+    'Involvement - Inclusion/Belonging',
+    'Loyalty - Commitment/Dedication',
+    'Order - Systematic/Structured',
+    'Personal development - Learning/Growth',
+    'Power - Influence/Authority',
+    'Quality - Excellence/Accuracy',
+    'Recognition - Acknowledgement/Status',
+    'Resilience - Flexibility/Determination',
+    'Responsibility - Accountability/Reliability',
+    'Security - Safety/Protection',
+    'Self-respect - Self-esteem/Sense of worth',
+    'Spirituality - Faith/Spiritual/religious beliefs',
+    'Teamwork - Cooperation/Collaboration',
+    'Tradition - Customs/Rituals',
+    'Trust - Relying on/Confiding in',
+    'Wealth - Prosperity/Getting rich',
+    'Wisdom - Knowledge/Insight'
 ];
+
+
 
 // Define global, universal variables
 let usedCards = data;
