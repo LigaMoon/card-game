@@ -52,7 +52,7 @@ p {
     color: #00798c;
 }
 
-.card-container button:hover {
+.card-container button:hover, .select-btn:hover {
     background-color: #00798c;
     color: #fff;
 }
@@ -81,5 +81,21 @@ p {
 
 #reset-btn:focus, .card-container button:focus {
     outline: none;
+}
+
+.select-container {
+    text-align: center;
+    height: 100%;
+}
+
+.select-btn {
+    text-decoration: none;
+    color: #00798c;
+    border: 2px solid #00798c;
+    padding: 3rem;
+    line-height: 12rem;
+    margin: 1rem;
+    text-transform: uppercase;
+    font-size: 1.5rem;
 }
 
