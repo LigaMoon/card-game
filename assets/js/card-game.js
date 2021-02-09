@@ -51,15 +51,12 @@ const randomCards = () => {
 }
 
 // Same but for only card 1
-const randomCardOne = () => {
+const discardCardOne = () => {
     const discardCard = cardOne.innerHTML;
     keepCards = removeCard(keepCards, discardCard);
     discardCards.push(discardCard);
 
-    let cardOneNewContent = usedCards[Math.floor(Math.random() * usedCards.length)];
-    cardOne.innerHTML = cardOneNewContent;
-    usedCards = removeCard(usedCards, cardOneNewContent);
-    keepCards.push(cardOneNewContent);
+    randomCards();
 
     console.log(usedCards);
     console.log(keepCards);
@@ -70,21 +67,18 @@ cardOneBtn.addEventListener('click', () => {
     if ( usedCards.length === 0 ) {
         return msg.innerHTML = 'END';
     } else {
-        randomCardOne();
+        discardCardOne();
     };
 });
 
 
 // Same but for only card 2
-const randomCardTwo = () => {
+const discardCardTwo = () => {
     const discardCard = cardTwo.innerHTML;
     keepCards = removeCard(keepCards, discardCard);
     discardCards.push(discardCard);
 
-    let cardTwoNewContent = usedCards[Math.floor(Math.random() * usedCards.length)];
-    cardTwo.innerHTML = cardTwoNewContent;
-    usedCards = removeCard(usedCards, cardTwoNewContent);
-    keepCards.push(cardTwoNewContent);
+    randomCards();
 
     console.log(usedCards);
     console.log(keepCards);
@@ -95,7 +89,7 @@ cardTwoBtn.addEventListener('click', () => {
     if ( usedCards.length === 0 ) {
         return msg.innerHTML = 'END';
     } else {
-        randomCardTwo();
+        discardCardTwo();
     };
 });
 
