@@ -34,6 +34,44 @@ const removeCard = (arr, value) => {
     });
 }
 
+const newCardsOne = () => {
+    let pickedCard;
+    if ( keepCards.length > 2) {
+        usedCards = keepCards;
+        keepCards = [];
+        randomCards();
+    } else if ( keepCards.length === 2 ) {
+        pickedCard = cardTwo.innerHTML;
+        cardOneBtn.setAttribute('disabled', true);
+        cardTwoBtn.setAttribute('disabled', true);
+        return msg.innerHTML = `your picked card is ${pickedCard}`;
+    } else {
+        pickedCard = keepCards[0];
+        cardOneBtn.setAttribute('disabled', true);
+        cardTwoBtn.setAttribute('disabled', true);
+        return msg.innerHTML = `your picked card is ${pickedCard}`;
+    }
+}
+
+const newCardsTwo = () => {
+    let pickedCard;
+    if ( keepCards.length > 2) {
+        usedCards = keepCards;
+        keepCards = [];
+        randomCards();
+    } else if ( keepCards.length === 2 ) {
+        pickedCard = cardOne.innerHTML;
+        cardOneBtn.setAttribute('disabled', true);
+        cardTwoBtn.setAttribute('disabled', true);
+        return msg.innerHTML = `your picked card is ${pickedCard}`;
+    } else {
+        pickedCard = keepCards[0];
+        cardOneBtn.setAttribute('disabled', true);
+        cardTwoBtn.setAttribute('disabled', true);
+        return msg.innerHTML = `your picked card is ${pickedCard}`;
+    }
+}
+
 /*
 Gets a random value from usedCards and assigns it to card 1, then removes it from the usedCards array.
 Adds selected radnom cards to Keep array
@@ -55,41 +93,42 @@ const discardCardOne = () => {
     const discardCard = cardOne.innerHTML;
     keepCards = removeCard(keepCards, discardCard);
     discardCards.push(discardCard);
-
-    randomCards();
-
-    console.log(usedCards);
-    console.log(keepCards);
-    console.log(discardCards);
 }
 
 cardOneBtn.addEventListener('click', () => {
-    if ( usedCards.length === 0 ) {
-        return msg.innerHTML = 'END';
+
+    if (usedCards.length === 1) {
+        discardCardOne();
+        keepCards.push(usedCards[0]);
+        newCardsOne();
+    } else if ( usedCards.length === 0 ) {
+        discardCardOne();
+        newCardsOne();
     } else {
         discardCardOne();
+        randomCards();
     };
 });
-
 
 // Same but for only card 2
 const discardCardTwo = () => {
     const discardCard = cardTwo.innerHTML;
     keepCards = removeCard(keepCards, discardCard);
     discardCards.push(discardCard);
-
-    randomCards();
-
-    console.log(usedCards);
-    console.log(keepCards);
-    console.log(discardCards);
 }
 
 cardTwoBtn.addEventListener('click', () => {
-    if ( usedCards.length === 0 ) {
-        return msg.innerHTML = 'END';
+
+    if (usedCards.length === 1) {
+        discardCardTwo();
+        keepCards.push(usedCards[0]);
+        newCardsTwo();
+    } else if ( usedCards.length === 0 ) {
+        discardCardTwo();
+        newCardsTwo();
     } else {
         discardCardTwo();
+        randomCards();
     };
 });
 
