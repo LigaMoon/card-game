@@ -19,19 +19,30 @@ let discardCards = [];
 let msg = document.querySelector('#msg');
 
 // Define card 1 associated variables
-const cardOne = document.querySelector('#card-one')
-const cardOneBtn = document.querySelector('#card-one-btn')
+const cardOne = document.querySelector('#card-one');
+const cardOneBtn = document.querySelector('#card-one-btn');
 
 // Define card 2 associated variables
-const cardTwo = document.querySelector('#card-two')
-const cardTwoBtn = document.querySelector('#card-two-btn')
+const cardTwo = document.querySelector('#card-two');
+const cardTwoBtn = document.querySelector('#card-two-btn');
 
+// Define Reset button
+const resetBtn = document.querySelector('#reset-btn');
 
 // Removes specific value from an array
 const removeCard = (arr, value) => { 
     return arr.filter( (e) => { 
         return e != value; 
     });
+}
+
+// Change UsedCards to the original array, remove disable attribute from buttons
+const resetCards = () => {
+    usedCards = data;
+    keepCards = [];
+    discardCards = [];
+    cardOneBtn.removeAttribute('disabled');
+    cardTwoBtn.removeAttribute('disabled');
 }
 
 const newCardsOne = () => {
@@ -130,6 +141,12 @@ cardTwoBtn.addEventListener('click', () => {
         discardCardTwo();
         randomCards();
     };
+});
+
+// Reset and pick to new cards
+resetBtn.addEventListener('click', () => {
+    resetCards();
+    randomCards();
 });
 
 
