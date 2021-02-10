@@ -567,3 +567,21 @@ const data = [
         ]
     }
 ];
+
+const questionContainer = document.querySelector('#question-container');
+
+data.forEach( e => {
+    let row = `<p class="question-name">${e.row}</p>
+        <label for="huey">${e.items[0].name}</label>
+        <input type="radio" id="${e.items[0].name}" name="row-${e.row}" value="${e.items[0].name}">
+
+        <label for="huey">${e.items[1].name}</label>
+        <input type="radio" id="${e.items[1].name}" name="row-${e.row}" value="${e.items[1].name}">
+
+        <label for="huey">${e.items[2].name}</label>
+        <input type="radio" id="${e.items[2].name}" name="row-${e.row}" value="${e.items[2].name}">
+
+        <label for="huey">${e.items[3].name}</label>
+        <input type="radio" id="${e.items[3].name}" name="row-${e.row}" value="${e.items[3].name}">`;
+    questionContainer.innerHTML += row;
+});
