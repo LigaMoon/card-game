@@ -569,19 +569,63 @@ const data = [
 ];
 
 const questionContainer = document.querySelector('#question-container');
+const submitBtn = document.querySelector('#submit-form');
+const resetBtn = document.querySelector('#reset-button');
+let green = 0;
+let red = 0;
+let blue = 0;
+let yellow = 0;
 
 data.forEach( e => {
     let row = `<p class="question-name">${e.row}</p>
-        <label for="huey">${e.items[0].name}</label>
-        <input type="radio" id="${e.items[0].name}" name="row-${e.row}" value="${e.items[0].name}">
+        <div>
+            <input type="radio" id="${e.items[0].name}" name="row-${e.row}" value="${e.items[0].color}-${e.items[0].name}" required checked>
+            <label for="${e.items[0].name}">${e.items[0].name}</label>
+        </div>
 
-        <label for="huey">${e.items[1].name}</label>
-        <input type="radio" id="${e.items[1].name}" name="row-${e.row}" value="${e.items[1].name}">
+        <div>
+            <input type="radio" id="${e.items[1].name}" name="row-${e.row}" value="${e.items[1].color}-${e.items[1].name}">
+            <label for="${e.items[1].name}">${e.items[1].name}</label>
+        </div>
 
-        <label for="huey">${e.items[2].name}</label>
-        <input type="radio" id="${e.items[2].name}" name="row-${e.row}" value="${e.items[2].name}">
+        <div>
+            <input type="radio" id="${e.items[2].name}" name="row-${e.row}" value="${e.items[2].color}-${e.items[2].name}">
+            <label for="${e.items[2].name}">${e.items[2].name}</label>
+        </div>
 
-        <label for="huey">${e.items[3].name}</label>
-        <input type="radio" id="${e.items[3].name}" name="row-${e.row}" value="${e.items[3].name}">`;
+        <div>
+            <input type="radio" id="${e.items[3].name}" name="row-${e.row}" value="${e.items[3].color}-${e.items[3].name}">
+            <label for="${e.items[3].name}">${e.items[3].name}</label>
+        </div>`;
     questionContainer.innerHTML += row;
+});
+
+submitBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    submitBtn.setAttribute('disabled', true);
+    console.log('Hi');
+    const inputs = document.querySelectorAll('input[checked]');
+    inputs.forEach( e => {
+        const colorValue = e.getAttribute('value').split('-')[0];
+        if ( colorValue === 'green') {
+            green += 1;
+        }
+        else if ( colorValue === 'red') {
+            red += 1;
+        }
+        else if ( colorValue === 'blue') {
+            blue += 1;
+        }
+        else {
+            yellow += 1;
+        }
+    });
+    const colors = [red, blue, green, yellow];
+    const maxColorNum = Math.max(...colors);
+    let maxColorName;
+    const redPerc = red / 27 * 100;
+    const bluePerc = blue / 27 * 100;
+    const greenPerc = green / 27 * 100;
+    const yellowPerc = yellow / 27 * 100;
+    
 });
