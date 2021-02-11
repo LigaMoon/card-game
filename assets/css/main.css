@@ -30,7 +30,7 @@ p {
     text-align: center;
 }
 
-.card-container button, #reset-btn {
+.card-container button, #reset-btn,  #submit-form, #reset-button {
     margin: 2rem 1rem;
     font: 400 1rem 'Montserrat';
     background-color: #fff;
@@ -47,34 +47,35 @@ p {
     text-align: center;
 }
 
-.card-container button {
+.card-container button, #submit-form  {
     border: 1px solid #00798c;
     color: #00798c;
 }
 
-.card-container button:hover, .select-btn:hover {
+.card-container button:hover, .select-btn:hover, #submit-form:hover  {
     background-color: #00798c;
     color: #fff;
 }
 
-.card-container button[disabled] {
+.card-container button[disabled], #submit-form[disabled] {
     border: 1px solid #9db4c0;
     color: #9db4c0;
     cursor: not-allowed;
 }
 
-.card-container button[disabled]:hover {
+.card-container button[disabled]:hover, #submit-form[disabled]:hover {
     border: 1px solid #9db4c0;
     color: #9db4c0;
     background-color: #fff;
 }
 
-#reset-btn {
+#reset-btn, #reset-button {
     border: 1px solid #d1495b;
     color: #d1495b;
+    text-decoration: none;
 }
 
-#reset-btn:hover {
+#reset-btn:hover, #reset-button:hover {
     background-color: #d1495b;
     color: #fff;
 }
