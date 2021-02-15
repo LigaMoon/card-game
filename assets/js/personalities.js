@@ -575,11 +575,12 @@ let green = 0;
 let red = 0;
 let blue = 0;
 let yellow = 0;
+const results = document.querySelector('#results');
 
 data.forEach( e => {
     let row = `<p class="question-name">${e.row}</p>
         <div>
-            <input type="radio" id="${e.items[0].name}" name="row-${e.row}" value="${e.items[0].color}-${e.items[0].name}" required checked>
+            <input type="radio" id="${e.items[0].name}" name="row-${e.row}" value="${e.items[0].color}-${e.items[0].name}" required>
             <label for="${e.items[0].name}">${e.items[0].name}</label>
         </div>
 
@@ -601,10 +602,7 @@ data.forEach( e => {
 });
 
 submitBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    submitBtn.setAttribute('disabled', true);
-    console.log('Hi');
-    const inputs = document.querySelectorAll('input[checked]');
+    const inputs = document.querySelectorAll('input:checked');
     inputs.forEach( e => {
         const colorValue = e.getAttribute('value').split('-')[0];
         if ( colorValue === 'green') {
@@ -621,11 +619,29 @@ submitBtn.addEventListener('click', (e) => {
         }
     });
     const colors = [red, blue, green, yellow];
-    const maxColorNum = Math.max(...colors);
-    let maxColorName;
-    const redPerc = red / 27 * 100;
-    const bluePerc = blue / 27 * 100;
-    const greenPerc = green / 27 * 100;
-    const yellowPerc = yellow / 27 * 100;
-    
+    // const maxColorNum = Math.max(...colors);
+    // let maxColorName;
+    let redPerc = Math.round(red / 27 * 100, 2);
+    let bluePerc = Math.round(blue / 27 * 100, 2);
+    let greenPerc = Math.round(green / 27 * 100, 2);
+    let yellowPerc = Math.round(yellow / 27 * 100, 2);
+    if (inputs.length === 27 ) {
+        submitBtn.setAttribute('disabled', true);
+        results.innerHTML = `
+            <h3>Red: ${redPerc}%</h3>
+            <p></p>
+            <h3>Blue: ${bluePerc}%</h3>
+            <p></p>
+            <h3>Green: ${greenPerc}%</h3>
+            <p></p>
+            <h3>Yellow: ${yellowPerc}%</h3>
+            <p></p>
+        `;
+        redPerc = bluePerc = greenPerc = yellowPerc = 0;
+
+        window.location.href = '#results';
+    } else {
+        document.querySelector('input[name="submitButton"]').click();
+
+    }
 });
