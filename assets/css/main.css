@@ -60,7 +60,8 @@ p {
 .card-container button[disabled], #submit-form[disabled] {
     border: 1px solid #9db4c0;
     color: #9db4c0;
-    cursor: not-allowed;
+    /* cursor: not-allowed; */
+    pointer-events: none;
 }
 
 .card-container button[disabled]:hover, #submit-form[disabled]:hover {
@@ -107,4 +108,12 @@ p {
     margin-bottom: 1rem;
     margin-top: 2rem;
     font-weight: 600;
+}
+
+form {
+    margin-bottom: 4rem;
+}
+
+#question-container {
+    margin-bottom: 2rem;
 }
