@@ -30,7 +30,7 @@ p {
     text-align: center;
 }
 
-.card-container button, #reset-btn,  #submit-form, #reset-button {
+.card-container button, #reset-btn,  #submit-form, #reset-button, .btn {
     margin: 2rem 1rem;
     font: 400 1rem 'Montserrat';
     background-color: #fff;
@@ -47,12 +47,13 @@ p {
     text-align: center;
 }
 
-.card-container button, #submit-form  {
+.card-container button, #submit-form, .btn-green {
     border: 1px solid #00798c;
     color: #00798c;
+    text-decoration: none;
 }
 
-.card-container button:hover, .select-btn:hover, #submit-form:hover  {
+.card-container button:hover, .select-btn:hover, #submit-form:hover, .btn-green:hover  {
     background-color: #00798c;
     color: #fff;
 }
@@ -112,8 +113,22 @@ p {
 
 form {
     margin-bottom: 4rem;
+    padding-left: 2rem;
 }
 
 #question-container {
     margin-bottom: 2rem;
+}
+
+.pers-descr {
+    text-align: center;
+    max-width: 45rem;
+    margin: 0 auto;
+    padding: 2rem;
+
+}
+
+.pers-descr img {
+    height: 400px;
+    margin: 1rem auto;
 }
