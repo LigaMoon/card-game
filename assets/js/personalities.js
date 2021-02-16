@@ -628,14 +628,38 @@ submitBtn.addEventListener('click', (e) => {
     if (inputs.length === 27 ) {
         submitBtn.setAttribute('disabled', true);
         results.innerHTML = `
-            <h3>Red: ${redPerc}%</h3>
-            <p></p>
-            <h3>Blue: ${bluePerc}%</h3>
-            <p></p>
-            <h3>Green: ${greenPerc}%</h3>
-            <p></p>
-            <h3>Yellow: ${yellowPerc}%</h3>
-            <p></p>
+            <div class="color-type red-type">
+                <h3>Red: ${redPerc}%</h3>
+                <p>REDS are strong leaders, fast paced thinkers, risk takers, purposeful, drivers, strong-willed,
+                less patient, with obvious energy, formal, overtly competitive, and rational. You may recognise many of the
+                qualities of REDS are in many leaders as they take ownership, need to be fast paced in their thinking, take risks and
+                are purposeful and confident.</p>
+            </div>
+            <div class="color-type red-type">
+                <h3>Blue: ${bluePerc}%</h3>
+                <p>BLUES are deep thinkers, analytical in nature, very detail focused and formal in their
+                thinking. They can come across as being aloof, but are deliberate in their approach and systematic, precise and pay
+                attention to detail. They like things in their place, and are very organised with good time management skills. They
+                are sticklers for time and are capable of coming to their own conclusions without having input from others. They
+                take their time in their thinking and are much slower paced than REDS or YELLOWS. BLUES can come across as
+                perfectionists due to their logical, systematic, precise and deliberate approach to problem solving. BLUES like to
+                have all the facts, and then logically put together an answer.</p>
+            </div>
+            <div class="color-type green-type">
+                <h3>Green: ${greenPerc}%</h3>
+                <p>Cool, laid back relaxed and patient, best describes the personality traits of GREEN. They
+                are easy to get along with and very informal in their approach. They are social & focus on relationships, so can come
+                across as emotional. Much slower paced in their thinking, they are very democratic people. They are very understanding,
+                and agreeable. They can sometimes say yes, when they want to say no. GREEN is the go between for REDS and
+                YELLOWS who are much faster paced. They act as the facilitator in conflict resolution.</p>
+            </div>
+            <div class="color-type yellow-type">
+                <h3>Yellow: ${yellowPerc}%</h3>
+                <p>YELLOWS are the life and soul of the party. They are sociable, expressive, very
+                imaginative and enthusiastic. YELLOWS are very informal, very optimistic and animated. Their imaginations can
+                sometimes lead their strategizing.</p>
+                <div class="personality-description">
+            </div>
         `;
         redPerc = bluePerc = greenPerc = yellowPerc = 0;
 
