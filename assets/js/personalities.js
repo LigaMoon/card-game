@@ -571,10 +571,7 @@ const data = [
 const questionContainer = document.querySelector('#question-container');
 const submitBtn = document.querySelector('#submit-form');
 const resetBtn = document.querySelector('#reset-button');
-let green = 0;
-let red = 0;
-let blue = 0;
-let yellow = 0;
+
 const results = document.querySelector('#results');
 
 data.forEach( e => {
@@ -602,6 +599,10 @@ data.forEach( e => {
 });
 
 submitBtn.addEventListener('click', (e) => {
+    let green = 0;
+    let red = 0;
+    let blue = 0;
+    let yellow = 0;
     const inputs = document.querySelectorAll('input:checked');
     inputs.forEach( e => {
         const colorValue = e.getAttribute('value').split('-')[0];
