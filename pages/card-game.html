@@ -7,24 +7,22 @@
     <title>Card Game</title>
 </head>
 <body>
-    <a href="./../index.html">< main page</a>
-    <hr>
-    <h1>Card Game</h1>
-    <hr>
-    <h2 id="msg">click 'discard' to get rid of the card you don't want to keep</h2>
+    <h1 class="title-lines lines-blue">Motives / Personal Drivers</h1>
+    <a href="./../index.html" class="btn btn-blue-red">main page</a>
+    <h2 id="msg">Discard the card that is less important to you</h2>
     <p>(cards left: <span id="cards-left"></span>)</p>
+    <div class="reset-container">
+        <button id="reset-btn" class="btn btn-red-solid">Reset</button>
+    </div>
     <div class="cards">
         <div class="card-container">
             <div id="card-one">1</div>
-            <button id="card-one-btn">Discard</button>
+            <button id="card-one-btn" class="btn btn-blue-solid">Discard</button>
         </div>
         <div class="card-container">
             <div id="card-two">2</div>
-            <button id="card-two-btn">Discard</button>
+            <button id="card-two-btn" class="btn btn-blue-solid">Discard</button>
         </div>
-    </div>
-    <div class="reset-container">
-        <button id="reset-btn">Reset</button>
     </div>
     <script src="./../assets/js/card-game.js"></script>
 </body>
