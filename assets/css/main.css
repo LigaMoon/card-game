@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
 
+
+/* -------VARIABLES--------- */
+
+:root {
+    --dark-blue: #0900bc;
+    --blue: #5e72eb;
+    --light-blue: #9fadfc;
+    --red: #ff9190;
+    --dark-red: #fc4668;
+    --orange: #fdc094;
+}
+
+
+/* -------COMMONN STYLES--------- */
+
 body {
     font-family:  'Montserrat', sans-serif;
 }
@@ -18,10 +33,77 @@ p {
     text-align: center;
 }
 
+.title-lines {
+    border-top: 4px solid;
+    border-bottom: 4px solid;
+    padding: 1rem;
+}
+
+.lines-blue-red {
+    border-image-source: linear-gradient(90deg, var(--blue), var(--red));
+    border-image-slice: 1;
+}
+
+.lines-blue {
+    border-image-source: linear-gradient(45deg, var(--light-blue), var(--blue), var(--dark-blue));
+    border-image-slice: 1;
+}
+
+.lines-red {
+    border-image-source: linear-gradient(90deg, var(--orange), var(--red), var(--dark-red));
+    border-image-slice: 1; 
+}
+
+.btn-blue {
+    background: linear-gradient(90deg, var(--light-blue), var(--blue), var(--dark-blue));
+    color: #fff;
+    box-sizing: border-box;
+}
+
+.btn-blue:hover {
+    background: var(--blue);
+    box-shadow: 5px 5px 19px rgba(0, 0, 0, 0.3),
+    3px 3px 9px rgba(0, 0, 0, 0.4);
+}
+
+.btn-red {
+    background: linear-gradient(90deg, var(--orange), var(--red), var(--dark-red));
+    color: #fff;
+}
+
+.btn-red:hover {
+    background: var(--red);
+    box-shadow: 5px 5px 19px rgba(0, 0, 0, 0.3),
+    3px 3px 9px rgba(0, 0, 0, 0.4);
+}
+
+
+/* -------MAIN PAGE--------- */
+
+.select-container {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.select-btn {
+    width: 40%;
+    max-width: 450px;
+    text-decoration: none;
+    padding: 2rem;
+    margin: 1rem;
+    font-size: 1.25rem;
+    line-height: 3rem;
+    text-transform: uppercase;
+    border-radius: 4rem;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1),
+                3px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+
 .cards {
     display: inline-flex;
     justify-content: space-evenly;
-    width: 100%;
 }
 
 .card-container {
@@ -41,6 +123,12 @@ p {
 .card-container div {
     padding: 1rem;
     border: 1px solid gray;
+    width: calc(63px * 3.5);
+    height: calc(88px * 3.5);
+    border-radius: 1rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
 }
 
 .reset-container {
@@ -53,7 +141,7 @@ p {
     text-decoration: none;
 }
 
-.card-container button:hover, .select-btn:hover, #submit-form:hover, .btn-green:hover  {
+.card-container button:hover, #submit-form:hover, .btn-green:hover  {
     background-color: #00798c;
     color: #fff;
 }
@@ -86,21 +174,7 @@ p {
     outline: none;
 }
 
-.select-container {
-    text-align: center;
-    height: 100%;
-}
 
-.select-btn {
-    text-decoration: none;
-    color: #00798c;
-    border: 2px solid #00798c;
-    padding: 3rem;
-    line-height: 12rem;
-    margin: 1rem;
-    text-transform: uppercase;
-    font-size: 1.5rem;
-}
 
 
 /* Personalities */
